@@ -2,6 +2,7 @@ package net.lecnam.ecue2.tp7;
 
 import java.util.List;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Execute {
 
@@ -70,16 +71,25 @@ public class Execute {
 
 
 
-    private static void exercice2() {
+    public static void exercice2() {
 
+        Nuancier nuancier = new Nuancier();
 
+        Set<String> couleurs = nuancier.getCouleursTreeSet();
+
+        for (String couleur : couleurs) {
+            System.out.println(couleur);
+        }
 
     }
 
-    private static void exercice3() {
+    public static void exercice3() {
 
+        Nuancier nuancier = new Nuancier();
 
+        String couleur = nuancier.getCouleurFromCode('r');
 
+        System.out.println(couleur);
     }
 
 
