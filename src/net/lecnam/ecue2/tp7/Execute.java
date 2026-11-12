@@ -19,7 +19,7 @@ public class Execute {
 
         //exercice4();
 
-        exercice5();
+        //exercice5();
 
         exercice6();
 
@@ -137,7 +137,12 @@ public class Execute {
 
     private static void exercice6() {
 
-
+        try {
+            FilmService filmService = new FilmService();
+            filmService.searchFilm("Man");
+        } catch (IOException e) {
+            System.err.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
 
     }
 

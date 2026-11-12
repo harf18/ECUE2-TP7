@@ -43,4 +43,21 @@ public class FilmService {
             System.out.println(film);
         }
     }
+
+    public void searchFilm(String search) {
+        System.out.println("Résultat(s) de la recherche pour : '" + search);
+        boolean found = false;
+        String searchLower = search.toLowerCase();
+
+        for (Film film : filmSet) {
+            if (film.getTitre().toLowerCase().contains(searchLower)) {
+                System.out.println(film);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Aucun film ne correspond à votre recherche.");
+        }
+    }
 }
