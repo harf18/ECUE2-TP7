@@ -1,9 +1,11 @@
 package net.lecnam.ecue2.tp7;
 
 import net.lecnam.ecue2.tp7.film.Film;
+import net.lecnam.ecue2.tp7.film.FilmService;
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 
 import java.util.*;
+import java.io.IOException;
 
 public class Execute {
 
@@ -15,7 +17,7 @@ public class Execute {
 
         //exercice3();
 
-        exercice4();
+        //exercice4();
 
         exercice5();
 
@@ -124,7 +126,12 @@ public class Execute {
 
     private static void exercice5() {
 
-
+        try {
+            FilmService filmService = new FilmService();
+            filmService.printFilms();
+        } catch (IOException e) {
+            System.err.println("Une erreur est survenue lors de la lecture du fichier films.csv : " + e.getMessage());
+        }
 
     }
 
