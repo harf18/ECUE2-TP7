@@ -27,9 +27,9 @@ public class Execute {
 
         //exercice4();
 
-        exercice5();
+        //exercice5();
 
-        //exercice6();
+        exercice6();
 
 
     }
@@ -138,8 +138,12 @@ public class Execute {
     }
 
     private static void exercice6() {
-
-
+        try {
+            FilmService service = new FilmService();
+            service.searchFilm("man");
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier films.csv : " + e.getMessage());
+        }
 
     }
 

@@ -47,4 +47,16 @@ public class FilmService {
         }
     }
 
+    public void searchFilm(String search) {
+        if (filmSet != null) {
+            System.out.println("--- Résultats de la recherche pour : \"" + search + "\" ---");
+            for (Film film : filmSet) {
+                // Utilisation detoLowerCase() pour rendre la recherche insensible à la casse (majuscules/minuscules)
+                if (film.getTitre().toLowerCase().contains(search.toLowerCase())) {
+                    System.out.println(film);
+                }
+            }
+        }
+    }
+
 }
