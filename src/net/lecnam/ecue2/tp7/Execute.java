@@ -2,7 +2,9 @@ package net.lecnam.ecue2.tp7;
 
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 import net.lecnam.ecue2.tp7.film.Film;
+import net.lecnam.ecue2.tp7.film.FilmService;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -23,9 +25,9 @@ public class Execute {
 
         //exercice3();
 
-        exercice4();
+        //exercice4();
 
-        //exercice5();
+        exercice5();
 
         //exercice6();
 
@@ -125,8 +127,13 @@ public class Execute {
     }
 
     private static void exercice5() {
-
-
+        try {
+            FilmService service = new FilmService();
+            System.out.println("--- Liste des films chargés depuis le fichier CSV ---");
+            service.printFilms();
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier films.csv : " + e.getMessage());
+        }
 
     }
 
