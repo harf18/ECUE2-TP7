@@ -40,6 +40,15 @@ public class FilmService {
         }
     }
 
+    public void searchFilm(String search) {
+        String recherche = search.toLowerCase();
+        for (Film film : filmSet) {
+            if (film.getTitre().toLowerCase().contains(recherche)) {
+                System.out.println(film);
+            }
+        }
+    }
+
     public void printFilms() {
         for (Film film : filmSet) {
             System.out.println(film);
