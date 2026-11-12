@@ -21,7 +21,9 @@ public class Execute {
 
         //exercice5();
 
-        exercice6();
+        //exercice6();
+
+        exercice7();
 
 
     }
@@ -140,6 +142,17 @@ public class Execute {
         try {
             FilmService filmService = new FilmService();
             filmService.searchFilm("Man");
+        } catch (IOException e) {
+            System.err.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
+
+    }
+
+    private static void exercice7() {
+
+        try {
+            FilmService filmService = new FilmService();
+            filmService.searchFilmByAnnee(1985);
         } catch (IOException e) {
             System.err.println("Erreur lors de la lecture du fichier : " + e.getMessage());
         }

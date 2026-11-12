@@ -29,6 +29,10 @@ public class Film implements Comparable<Film> {
     }
 
     public int compareTo(Film f) {
-        return this.anneeSortie.compareTo(f.getAnneeSortie());
+        int comparaisonAnnee = this.anneeSortie.compareTo(f.getAnneeSortie());
+        if (comparaisonAnnee == 0) {
+            return this.titre.compareTo(f.getTitre());
+        }
+        return comparaisonAnnee;
     }
 }
