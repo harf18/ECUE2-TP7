@@ -33,6 +33,11 @@ public class Film implements Comparable<Film> {
 
     @Override
     public int compareTo(Film f) {
-        return this.anneeSortie.compareTo(f.anneeSortie);
+        // D'abord sur l'année, puis sur le titre en cas d'égalité
+        int resultat = this.anneeSortie.compareTo(f.anneeSortie);
+        if (resultat != 0) {
+            return resultat;
+        }
+        return this.titre.compareTo(f.titre);
     }
 }
