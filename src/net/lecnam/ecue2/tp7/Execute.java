@@ -1,11 +1,9 @@
 package net.lecnam.ecue2.tp7;
 
+import net.lecnam.ecue2.tp7.film.Film;
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Execute {
 
@@ -15,7 +13,7 @@ public class Execute {
 
         // exercice2();
 
-        exercice3();
+        //exercice3();
 
         exercice4();
 
@@ -95,7 +93,32 @@ public class Execute {
 
     private static void exercice4() {
 
+        Film f1 = new Film("Sharknado", "Yannis Mouchard", 1994);
+        Film f2 = new Film("Pacific Rim", "Zackari Nouchet", 1972);
+        Film f3 = new Film("Cars", "Julien Forestier", 1957);
+        Film f4 = new Film("The Amazing Digital Circus", "Maxime Monichon", 1993);
+        Film f5 = new Film("Le Diner de Cons", "Andrea Andreoli", 2019);
 
+        Set<Film> filmsTries = new TreeSet<>();
+        filmsTries.add(f1);
+        filmsTries.add(f2);
+        filmsTries.add(f3);
+        filmsTries.add(f4);
+        filmsTries.add(f5);
+
+        System.out.println("Contenu de la collection triée");
+        for (Film film : filmsTries) {
+            System.out.println(film);
+        }
+
+        List<Film> listeFilms = new ArrayList<>(filmsTries);
+
+        Collections.reverse(listeFilms);
+
+        System.out.println("Contenu inversé");
+        for (Film film : listeFilms) {
+            System.out.println(film);
+        }
 
     }
 
