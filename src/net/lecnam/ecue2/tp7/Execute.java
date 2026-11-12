@@ -15,9 +15,9 @@ public class Execute {
 
         //exercice1();
 
-        exercice2();
+        //exercice2();
 
-        //exercice3();
+        exercice3();
 
         //exercice4();
 
@@ -83,8 +83,9 @@ public class Execute {
     }
 
     private static void exercice3() {
-
-
+        Nuancier nuancier = new Nuancier();
+        String couleurTrouvee = nuancier.getCouleurFromCode('r');
+        System.out.println("Couleur pour la lettre 'r' : " + couleurTrouvee);
 
     }
 
