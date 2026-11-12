@@ -1,8 +1,6 @@
 package net.lecnam.ecue2.tp7.nuancier;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Nuancier {
     private List<String> couleurs;
@@ -19,8 +17,24 @@ public class Nuancier {
         couleurs.add("blanc");
         couleurs.add("rouge");
         couleurs.addFirst("cyan");
+        initializeMap();
     }
     public List<String> getCouleurs(){
         return couleurs;
     }
+    public Set<String> getCouleursTreeSet(){
+        return new TreeSet<>(couleurs);
+    }
+    private void initializeMap(){
+        couleursMap = new HashMap<>();
+        for(String couleur : getCouleursTreeSet())
+        {
+            couleursMap.put(couleur.charAt(0),couleur);
+        }
+    }
+    public String getCouleurFromCode(char intiale)
+    {
+        return couleursMap.get(intiale);
+    }
+
 }
