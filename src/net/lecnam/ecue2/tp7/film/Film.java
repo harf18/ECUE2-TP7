@@ -24,7 +24,7 @@ public class Film implements Comparable<Film>{
         return this.realisateur;
     }
 
-    public Year getAnnee() {
+    public Year getAnneeSortie() {
         return this.anneeSortie;
     }
 
@@ -33,8 +33,13 @@ public class Film implements Comparable<Film>{
         return titre + ", " + realisateur + ", " + anneeSortie;
     }
 
-    @Override
     public int compareTo(Film f) {
-        return this.anneeSortie.compareTo(f.anneeSortie);
+        // 1. Comparaison par année
+        int resultat = this.anneeSortie.compareTo(f.anneeSortie);
+        // 2. Si les années sont égales, on compare par titre
+        if (resultat == 0) {
+            return this.titre.compareTo(f.titre);
+        }
+        return resultat;
     }
 }

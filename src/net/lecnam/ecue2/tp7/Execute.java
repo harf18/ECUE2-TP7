@@ -29,7 +29,9 @@ public class Execute {
 
         //exercice5();
 
-        exercice6();
+        //exercice6();
+
+        exercice7();
 
 
     }
@@ -146,6 +148,16 @@ public class Execute {
         }
 
     }
+
+    private static void exercice7() {
+        try {
+            FilmService service = new FilmService();
+            service.searchFilmByAnnee(1985);
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier films.csv : " + e.getMessage());
+        }
+    }
+
 
 
 }
