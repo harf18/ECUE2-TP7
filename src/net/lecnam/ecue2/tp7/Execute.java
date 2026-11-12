@@ -5,12 +5,13 @@ import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Execute {
 
     public static void main(String[] args) {
 
-        exercice1();
+        // exercice1();
 
         exercice2();
 
@@ -66,7 +67,19 @@ public class Execute {
 
     private static void exercice2() {
 
+        Nuancier nuancier = new Nuancier();
+        Set<String> monTreeSet = nuancier.getCouleursTreeSet();
 
+        System.out.println("Contenu du TreeSet :");
+        for (String couleur : monTreeSet) {
+            System.out.println(couleur);
+        }
+
+        /*
+         * On remarque 2 choses :
+         * 1/ D'une part, le tree set à retiré le doublon "rouge" qui était présent autrefois
+         * 2/ La liste est automatiquement triée dans l'ordre alphabétique
+         */
 
     }
 
