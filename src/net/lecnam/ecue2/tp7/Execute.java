@@ -78,7 +78,9 @@ public class Execute {
     }
 
     private static void exercice3() {
-
+        System.out.println("\n\n\nExo 3\n");
+        Nuancier nuancier = new Nuancier();
+        System.out.println("Couelur r : " + nuancier.getCouleurFromCode('r'));
 
 
     }
