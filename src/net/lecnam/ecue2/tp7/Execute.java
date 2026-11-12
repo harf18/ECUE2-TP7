@@ -6,13 +6,16 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import java.util.Set;
+
+
 public class Execute {
 
     public static void main(String[] args) {
 
-        exercice1();
+        //exercice1();
 
-        //exercice2();
+        exercice2();
 
         //exercice3();
 
@@ -67,14 +70,15 @@ public class Execute {
             System.out.println(couleur);
         }
 
-
-
     }
 
 
     private static void exercice2() {
+        Nuancier nuancier = new Nuancier();
+        Set<String> couleursTreeSet = nuancier.getCouleursTreeSet();
 
-
+        System.out.println("Contenu du TreeSet :");
+        System.out.println(couleursTreeSet);
 
     }
 
