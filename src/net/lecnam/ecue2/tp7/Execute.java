@@ -1,5 +1,9 @@
 package net.lecnam.ecue2.tp7;
 
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
 public class Execute {
 
     public static void main(String[] args) {
@@ -21,6 +25,36 @@ public class Execute {
 
     private static void exercice1() {
 
+        Nuancier nuancier = new Nuancier();
+        List<String> couleurs = nuancier.getCouleurs();
+
+        System.out.println("Taille de la liste : " + couleurs.size());
+
+        System.out.println("----------------");
+        for (int i = 0; i < couleurs.size(); i++) {
+            System.out.println(couleurs.get(i));
+        }
+        System.out.println("----------------");
+
+        for (String couleur : couleurs) {
+            System.out.println(couleur);
+        }
+        System.out.println("----------------");
+
+        Iterator<String> iterator = couleurs.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("----------------");
+
+        System.out.println("La couleur en première position est : " + couleurs.getFirst());
+
+        Collections.sort(couleurs);
+        System.out.println("----------------");
+        for (int i = 0; i < couleurs.size(); i++) {
+            System.out.println(couleurs.get(i));
+        }
+        System.out.println("----------------");
 
 
     }
