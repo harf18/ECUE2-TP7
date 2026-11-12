@@ -69,8 +69,11 @@ public class Execute {
 
 
     private static void exercice2() {
-
-
+        System.out.println("\n\n\nExo 2\n");
+        Nuancier nuancier = new Nuancier();
+        for(Object s : nuancier.getCouleursTreeSet()){
+            System.out.println(s);
+        }
 
     }
 
