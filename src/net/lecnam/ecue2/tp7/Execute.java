@@ -1,11 +1,10 @@
 package net.lecnam.ecue2.tp7;
 
+import net.lecnam.ecue2.tp7.film.Film;
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.time.Year;
+import java.util.*;
 
 public class Execute {
 
@@ -53,6 +52,8 @@ public class Execute {
         System.out.println("Première couleur : " + couleurs.get(0));
         Collections.sort(couleurs);
         couleurs.forEach(System.out::println);
+        System.out.println("----------------");
+
     }
 
 
@@ -77,8 +78,25 @@ public class Execute {
 
 
     private static void exercice4() {
+        Set<Film> films = new TreeSet<>();
+
+        films.add(new Film("The Godfather", "Francis Ford Coppola", 1972));
+        films.add(new Film("The Shawshank Redemption", "Frank Darabont", 1994));
+        films.add(new Film("Schindler's List", "Steven Spielberg", 1993));
+        films.add(new Film("Pulp Fiction", "Quentin Tarantino", 1994 + 0));
+        films.add(new Film("Spirited Away", "Hayao Miyazaki", 2001));
 
 
+
+        System.out.println("-------Exercice 4 ---------");
+
+        System.out.println("--- ordre année croissante -----");
+        films.forEach(System.out::println);
+        List<Film> liste = new ArrayList<>(films);
+        Collections.reverse(liste);
+        System.out.println("---inverse l'ordre-----");
+        liste.forEach(System.out::println);
+        System.out.println("----------------");
 
     }
 
