@@ -3,6 +3,7 @@ package net.lecnam.ecue2.tp7;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Execute {
 
@@ -55,15 +56,13 @@ public class Execute {
             System.out.println(couleurs.get(i));
         }
         System.out.println("----------------");
-
-
     }
 
 
     private static void exercice2() {
-
-
-
+        Nuancier nuancier = new Nuancier();
+        Set<String> couleursTreeSet = nuancier.getCouleursTreeSet();
+        System.out.println(couleursTreeSet);
     }
 
     private static void exercice3() {
