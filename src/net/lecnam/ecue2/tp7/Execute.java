@@ -1,19 +1,16 @@
 package net.lecnam.ecue2.tp7;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Execute {
 
     public static void main(String[] args) {
 
-        exercice1();
+        //exercice1();
 
-        exercice2();
+        //exercice2();
 
-        exercice3();
+        //exercice3();
 
         exercice4();
 
@@ -73,7 +70,23 @@ public class Execute {
 
 
     private static void exercice4() {
+        Set<Film> films = new TreeSet<>();
+        films.add(new Film("Dune", "Denis Villeneuve", 2021));
+        films.add(new Film("Pacific Rim", "Guillermo Del Toro", 2013));
+        films.add(new Film("22 Jump Street", "Christopher Miller/Phil Lord", 2014));
+        films.add(new Film("The Dark Knight", "Christopher Nolan", 2008));
 
+        for (Film f : films) {
+            System.out.println(f);
+        }
+        System.out.println("----------------");
+
+        List<Film> listeFilms = new ArrayList<>(films);
+        Collections.reverse(listeFilms);
+
+        for (Film f : listeFilms) {
+            System.out.println(f);
+        }
 
 
     }
