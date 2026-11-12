@@ -5,6 +5,7 @@ import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Execute {
 
@@ -12,7 +13,7 @@ public class Execute {
 
         exercice1();
 
-//        exercice2();
+        exercice2();
 //
 //        exercice3();
 //
@@ -64,7 +65,17 @@ public class Execute {
 
     private static void exercice2() {
 
+        Nuancier nuancier = new Nuancier();
+        Set<String> treeSet = nuancier.getCouleursTreeSet();
 
+        for (String couleur : treeSet) {
+            System.out.println(couleur);
+        }
+
+        // Remarque : le TreeSet ne contient pas de doublons ("rouge" n'apparaît
+        // qu'une seule fois alors qu'il est 2 fois dans la liste) et les éléments
+        // sont triés par ordre alphabétique (cyan n'est plus en première position
+        // car l'ordre d'insertion n'est pas conservé).
 
     }
 
