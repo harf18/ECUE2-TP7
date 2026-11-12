@@ -7,10 +7,11 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.IOException;
 
 public class Execute {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
 
         //exercice1();
 
@@ -18,7 +19,7 @@ public class Execute {
 
         //exercice3();
 
-        exercice4();
+        //exercice4();
 
         exercice5();
 
@@ -138,11 +139,16 @@ public class Execute {
     }
 
 
-    private static void exercice5() {
 
+    public static void exercice5() throws IOException {
 
+        // Création du service et importation des films
+        FilmService filmService = new FilmService();
 
+        // Affichage des films
+        filmService.printFilms();
     }
+
 
     private static void exercice6() {
 
