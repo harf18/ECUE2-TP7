@@ -43,4 +43,13 @@ public class FilmService {
             System.out.println(film);
         }
     }
+
+    public void searchFilm(String search) {
+        String rechercheMin = search.toLowerCase();
+        for (Film film : filmSet) {
+            if (film.getTitre().toLowerCase().contains(rechercheMin)) {
+                System.out.println(film);
+            }
+        }
+    }
 }

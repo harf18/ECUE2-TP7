@@ -104,9 +104,13 @@ public class Execute {
     }
 
     private static void exercice6() {
-
-
-
+        try {
+            FilmService service = new FilmService();
+            System.out.println("--- Recherche de films ---");
+            service.searchFilm("une");
+        } catch (IOException e) {
+            System.err.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
     }
 
 
