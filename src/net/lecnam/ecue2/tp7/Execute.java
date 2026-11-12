@@ -3,16 +3,20 @@ package net.lecnam.ecue2.tp7;
 import java.util.List;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Execute {
 
     public static void main(String[] args) {
 
-        exercice1();
+        //exercice1();
 
-        exercice2();
+        //exercice2();
 
-        exercice3();
+        //exercice3();
 
         exercice4();
 
@@ -93,11 +97,46 @@ public class Execute {
     }
 
 
-    private static void exercice4() {
 
+    public static void exercice4() {
 
+        // Création des films
+        Film film1 = new Film("Interstellar", "Christopher Nolan", 2014);
+        Film film2 = new Film("Pulp Fiction", "Quentin Tarantino", 1994);
+        Film film3 = new Film("Matrix", "Lana Wachowski", 1999);
+        Film film4 = new Film("Le Parrain", "Francis Ford Coppola", 1972);
+        Film film5 = new Film("Inception", "Christopher Nolan", 2010);
 
+        // Création d'une collection automatiquement triée
+        Set<Film> films = new TreeSet<>();
+
+        films.add(film1);
+        films.add(film2);
+        films.add(film3);
+        films.add(film4);
+        films.add(film5);
+
+        // Affichage de la collection triée
+        System.out.println("----- FILMS TRIES -----");
+
+        for (Film film : films) {
+            System.out.println(film);
+        }
+
+        // Création d'une ArrayList à partir du TreeSet
+        ArrayList<Film> listeFilms = new ArrayList<>(films);
+
+        // Inversion de l'ordre de la liste
+        Collections.reverse(listeFilms);
+
+        // Affichage de l'ArrayList inversée
+        System.out.println("----- FILMS EN ORDRE INVERSE -----");
+
+        for (Film film : listeFilms) {
+            System.out.println(film);
+        }
     }
+
 
     private static void exercice5() {
 
