@@ -66,8 +66,8 @@ public class Execute {
     }
 
     private static void exercice3() {
-
-
+        Nuancier nuancier = new Nuancier();
+        System.out.println("Couleur pour la lettre 'r' : " + nuancier.getCouleurFromCode('r'));
 
     }
 
