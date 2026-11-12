@@ -13,7 +13,7 @@ public class Execute {
 
         // exercice1();
 
-        exercice2();
+        // exercice2();
 
         exercice3();
 
@@ -85,7 +85,10 @@ public class Execute {
 
     private static void exercice3() {
 
-
+        Nuancier nuancier = new Nuancier();
+        char code = 'r';
+        String couleurTrouvee = nuancier.getCouleurFromCode(code);
+        System.out.println("La couleur correspondant à l'initiale '" + code + "' est : " + couleurTrouvee);
 
     }
 
