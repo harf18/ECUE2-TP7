@@ -1,5 +1,6 @@
 package net.lecnam.ecue2.tp7;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Execute {
@@ -92,8 +93,13 @@ public class Execute {
     }
 
     private static void exercice5() {
-
-
+        try {
+            FilmService service = new FilmService();
+            System.out.println("--- Liste des films importés depuis le fichier CSV ---");
+            service.printFilms();
+        } catch (IOException e) {
+            System.err.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
 
     }
 
