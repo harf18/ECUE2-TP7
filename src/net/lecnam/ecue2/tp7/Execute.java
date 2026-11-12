@@ -1,25 +1,30 @@
 package net.lecnam.ecue2.tp7;
 
+import net.lecnam.ecue2.tp7.film.Film;
+import net.lecnam.ecue2.tp7.film.FilmService;
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Execute {
 
     public static void main(String[] args) {
 
-        exercice1();
+//        exercice1();
+//
+//        exercice2();
+//
+//        exercice3();
 
-        exercice2();
-//
-        exercice3();
-//
 //        exercice4();
 //
-//        exercice5();
+        exercice5();
 //
 //        exercice6();
 
@@ -89,13 +94,44 @@ public class Execute {
 
     private static void exercice4() {
 
+        // Collection nativement triée (utilise compareTo de Film : tri par année)
+        // Attention : le TreeSet considère 2 films de même année comme identiques,
+        // d'où des années toutes différentes ici.
+        Set<Film> films = new TreeSet<>();
+        films.add(new Film("The Godfather", "Francis Ford Coppola", 1972));
+        films.add(new Film("Schindler's List", "Steven Spielberg", 1993));
+        films.add(new Film("The Shawshank Redemption", "Frank Darabont", 1994));
+        films.add(new Film("Seven Samurai", "Akira Kurosawa", 1954));
+        films.add(new Film("Fight Club", "David Fincher", 1999));
+        films.add(new Film("Spirited Away", "Hayao Miyazaki", 2001));
+        films.add(new Film("Inception", "Christopher Nolan", 2010));
+        films.add(new Film("Parasite", "Bong Joon-ho", 2019));
 
+        System.out.println("Films triés par année :");
+        for (Film film : films) {
+            System.out.println(film);
+        }
+        System.out.println("----------------");
+
+        // ArrayList créée à partir de la collection, puis ordre inversé
+        List<Film> liste = new ArrayList<>(films);
+        Collections.reverse(liste);
+
+        System.out.println("Films dans l'ordre inverse :");
+        for (Film film : liste) {
+            System.out.println(film);
+        }
 
     }
 
     private static void exercice5() {
 
-
+        try {
+            FilmService filmService = new FilmService();
+            filmService.printFilms();
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture de films.csv : " + e.getMessage());
+        }
 
     }
 
